@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Data</title>
+
+  <style>
+
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .form{
+        width: max-content;
+        margin: auto;
+      }
+      input{
+        width: 250px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        font-size: 15px;
+      }
+      textarea{
+        width: 830px;
+        height: 120px;
+        margin: 10px;
+        display: block;
+        padding: 5px;
+        font-size: 15px;
+      }
+      #submit{
+        padding: 10px 20px;
+        background-color: darkorchid;
+        color: white;
+        margin: 10px 45%;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+      .container{
+        width: 90%;
+        height: max-content;
+        /* border: 1px solid ; */
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+      .record{
+        width: 200px;
+        height: 200px;
+        margin: 10px 20px;
+        padding: 10px;
+        border-radius: 5px;
+        /* overflow-y: scroll; */
+        border: 1px solid darkgoldenrod;
+        position: relative;
+      }
+      .record p{
+        font-size: 15px;
+        line-height: 25px;
+      }
+      .record p span:nth-child(1){
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .close{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: darkgoldenrod;
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      
+
+  </style>
+
+</head>
+<body>
+
+
+  <div class="form">
+    <input type="text" id="name" placeholder="Your Name">
+    <input type="text" id="subject" placeholder="Subject">
+    <input type="number" id="age" placeholder="Age">
+    <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+    <button id="submit">Submit</button>
+  </div>
+
+    <div class="container"></div>
+  
+
+    <script>
+
+      const container = document.querySelector(".container");
+      let input_name = document.getElementById("name")
+      let input_subject = document.getElementById("subject")
+      let input_age = document.getElementById("age")
+      let input_message = document.getElementById("message")
+      let submitBtn = document.getElementById("submit");
+
+      container.addEventListener("click", removerecord)
+
+      let nameValue, subjectValue, ageValue, messageValue;
+
+      submitBtn.addEventListener("click", function(){
+        if(input_name.value == "" || input_age.value == "" || input_subject.value == "" || input_message.value == ""){
+          alert("All Fields are required");
+        }
+        else{
+          nameValue = input_name.value
+          subjectValue = input_subject.value
+          ageValue = input_age.value
+          messageValue = input_message.value
+
+          let record = document.createElement("div");
+          record.classList.add("record");
+          record.innerHTML = ` <p><span>Name:</span> <span>${nameValue}</span></p><p><span>Subject:</span> <span>${subjectValue}</span></p><p><span>Age:</span> <span>${ageValue}</span></p><p><span>Message:</span> <span>${messageValue}</span></p><button class="close">X</button>`
+              container.appendChild(record);
+
+          
+          
+
+          input_name.value = "" 
+          input_age.value = "" 
+          input_subject.value = "" 
+          input_message.value = "" 
+        }
+      })
+
+function removerecord(e) {
+    if(e.target.innerHTML == "X") {
+        e.target.parentElement.remove();   
+    }
+}
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html

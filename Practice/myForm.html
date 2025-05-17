@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORMS</title>
+
+    <style>
+
+*{
+        padding: 0;
+        margin: 0;
+      }
+      .form{
+        width: max-content;
+        margin: auto;
+      }
+      input{
+        width: 250px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        font-size: 15px;
+      }
+      textarea{
+        width: 830px;
+        height: 120px;
+        margin: 10px;
+        display: block;
+        padding: 5px;
+        font-size: 15px;
+      }
+      #submit{
+        padding: 10px 20px;
+        background-color: darkorchid;
+        color: white;
+        margin: 10px 45%;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
+      .container{
+        width: 90%;
+        height: max-content;
+        /* border: 1px solid ; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: auto;
+      }
+      .record{
+        width: 200px;
+        height: 200px;
+        margin: 10px 20px;
+        padding: 10px;
+        border-radius: 5px;
+        /* overflow-y: scroll; */
+        border: 1px solid darkgoldenrod;
+        position: relative;
+      }
+      .record p{
+        font-size: 15px;
+        line-height: 25px;
+      }
+      .record p span:nth-child(1){
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .close{
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: darkgoldenrod;
+        color: white;
+        font-size: 15px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="form">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="text" id="subject" placeholder="Subject">
+        <input type="number" id="age" placeholder="Age">
+        <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+        <button id="submit">Submit</button>
+    </div>
+    
+    <div class="container"></div>
+    
+    <script src="./script.js"></script>
+
+</body>
+</html>
